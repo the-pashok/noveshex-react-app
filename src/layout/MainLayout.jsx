@@ -12,7 +12,7 @@ export function MainLayout() {
   const location = useLocation();
 
   useEffect(() => {
-    const revealElements = document.querySelectorAll('.reveal');
+    const revealElements = document.querySelectorAll('.reveal:not(.is-visible)');
 
     const observer = new IntersectionObserver(
       (entries) => {
@@ -34,6 +34,11 @@ export function MainLayout() {
   useEffect(() => {
     document.body.classList.toggle('menu-open', isMenuOpen);
   }, [isMenuOpen]);
+
+  useEffect(() => {
+    setIsMenuOpen(false);
+    window.scrollTo({ top: 0, behavior: 'instant' });
+  }, [location.pathname]);
 
   return (
     <div className="app-shell">
@@ -79,7 +84,7 @@ export function MainLayout() {
           <div>
             <span className="site-footer__brand">Noveshex</span>
             <p className="site-footer__copy">
-              Dark-first redesign concept in React with reusable components and production-ready structure.
+              Dark-first redesign concept in React with reusable components, training-program pages and production-ready structure.
             </p>
           </div>
 

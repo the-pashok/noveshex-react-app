@@ -5,23 +5,23 @@ export function Hero() {
   return (
     <section className="hero">
       <Container className="hero__inner">
-        <div className="hero__copy reveal">
+        <div className="hero__copy reveal is-visible">
           <span className="hero__eyebrow">Noveshex</span>
           <h1>Темний, мінімалістичний досвід для нової версії платформи.</h1>
           <p>
             Переосмислений інтерфейс у premium-естетиці: великі акценти, чиста композиція,
-            адаптивна структура та окремі legal-сторінки в єдиній дизайн-системі.
+            адаптивна структура та окремі сторінки для training-програм і legal-контенту.
           </p>
           <div className="hero__actions">
-            <a href="#membership" className="button button--primary">
-              Get membership
-            </a>
+            <Link to="/programs" className="button button--primary">
+              Переглянути програми
+            </Link>
             <Link to="/privacy-policy" className="button button--secondary">
               Переглянути legal pages
             </Link>
           </div>
         </div>
-        <div className="hero__panel reveal reveal--delay">
+        <div className="hero__panel reveal reveal--delay is-visible">
           <div className="hero-card">
             <span>Dark-first UI</span>
             <strong>Training / Nutrition / Pharma</strong>

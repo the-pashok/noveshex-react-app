@@ -1,6 +1,6 @@
 export function LegalContent({ page }) {
   return (
-    <div className="legal-content reveal">
+    <div className="legal-content">
       <header className="legal-content__header">
         <span className="legal-content__eyebrow">Noveshex Legal</span>
         <h1>{page.title}</h1>

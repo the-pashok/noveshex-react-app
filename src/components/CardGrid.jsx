@@ -1,4 +1,30 @@
+import { Link } from 'react-router-dom';
+
 export function CardGrid({ items, variant = 'default' }) {
+  const renderAction = (item) => {
+    if (!item.cta) return null;
+
+    const className = `button ${item.featured ? 'button--primary' : 'button--secondary'}`;
+
+    if (item.href) {
+      if (item.external) {
+        return (
+          <a className={className} href={item.href} target="_blank" rel="noreferrer">
+            {item.cta}
+          </a>
+        );
+      }
+
+      return (
+        <Link className={className} to={item.href}>
+          {item.cta}
+        </Link>
+      );
+    }
+
+    return <button className={className}>{item.cta}</button>;
+  };
+
   return (
     <div className={`card-grid card-grid--${variant}`}>
       {items.map((item) => (
@@ -14,11 +40,7 @@ export function CardGrid({ items, variant = 'default' }) {
               ))}
             </ul>
           ) : null}
-          {'cta' in item ? (
-            <button className={`button ${item.featured ? 'button--primary' : 'button--secondary'}`}>
-              {item.cta}
-            </button>
-          ) : null}
+          {renderAction(item)}
         </article>
       ))}
     </div>

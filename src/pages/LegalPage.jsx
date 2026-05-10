@@ -8,7 +8,6 @@ import { NotFoundPage } from './NotFoundPage';
 
 export function LegalPage() {
   const { slug } = useParams();
-
   const page = useMemo(() => legalPages[slug], [slug]);
 
   if (!page) {

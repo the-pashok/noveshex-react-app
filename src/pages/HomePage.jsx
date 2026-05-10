@@ -3,7 +3,15 @@ import { Container } from '../components/Container';
 import { Hero } from '../components/Hero';
 import { ProgramCardGrid } from '../components/ProgramCardGrid';
 import { SectionHeading } from '../components/SectionHeading';
-import { courseCards, featureCards, membershipPlans } from '../data/siteData';
+import {
+  coachingSteps,
+  faqItems,
+  offerCards,
+  pricingPlans,
+  telegramHandle,
+  telegramUrl,
+  valueCards,
+} from '../data/siteData';
 import { trainingPrograms } from '../data/programsData';
 
 export function HomePage() {
@@ -11,48 +19,76 @@ export function HomePage() {
     <>
       <Hero />
 
-      <section id="courses" className="section">
+      <section id="offers" className="section">
         <Container>
           <SectionHeading
-            eyebrow="Courses"
-            title="Три ключові напрями для Noveshex"
-            description="Чітка продуктова структура для курсів, яка виглядає дорожче, читається легше й масштабується без хаосу."
+            title="Не черговий “фітнес-план”, а продукт, який реально можна впровадити"
+            description="Ми зібрали Noveshex так, щоб користувач отримував не просто інформацію, а чіткий маршрут: тренування, харчування, підтримка та зрозумілий наступний крок."
           />
-          <CardGrid items={courseCards} />
+          <CardGrid items={offerCards} />
         </Container>
       </section>
 
-      <section id="training-programs" className="section section--muted">
+      <section id="why-us" className="section section--muted">
         <Container>
           <SectionHeading
-            eyebrow="Training"
-            title="Готові програми тренувань"
-            description="Окремі сторінки для 3-Day Split, 4-Day Split та Full Body в тому ж візуальному стилі."
+            title="Логіка сайту і продукту підпорядкована одній меті — щоб ти реально дійшов до результату"
+            description="Мінімум шуму, максимум зрозумілих рішень. Саме тому тут спочатку сенс і структура, а вже потім декоративність."
+          />
+          <CardGrid items={valueCards} variant="feature" />
+        </Container>
+      </section>
+
+      <section id="programs" className="section">
+        <Container>
+          <SectionHeading
+            title="Три формати тренувань під різний ритм життя"
+            description="Обирай той варіант, який ти зможеш виконувати стабільно. Саме стабільність, а не ідеальний понеділок, дає результат."
           />
           <ProgramCardGrid items={Object.values(trainingPrograms)} />
         </Container>
       </section>
 
-      <section id="features" className="section">
+      <section id="coaching" className="section section--muted">
         <Container>
           <SectionHeading
-            eyebrow="System"
-            title="Сайт, побудований як система, а не набір випадкових блоків"
-            description="Спільні компоненти, передбачувана типографіка, єдиний візуальний ритм і чиста адаптивна логіка."
+            title="Для тих, кому потрібен не файл, а зворотний зв’язок і контроль по ходу"
+            description="Якщо ти хочеш менше сумнівів, швидший старт і регулярні корекції, формат ведення дає зовсім інший рівень включеності."
           />
-          <CardGrid items={featureCards} variant="feature" />
+          <CardGrid items={coachingSteps} variant="feature" />
+          <div className="cta-band reveal is-visible">
+            <div>
+              <span className="section-heading__eyebrow">Telegram</span>
+              <h3>Хочеш підібрати формат під себе?</h3>
+              <p>
+                Напиши в Telegram, коротко опиши ціль, досвід і графік — і тобі скажуть, що краще підійде: готова програма чи ведення.
+              </p>
+            </div>
+            <a href={telegramUrl} target="_blank" rel="noreferrer" className="button button--primary">
+              Написати {telegramHandle}
+            </a>
+          </div>
         </Container>
       </section>
 
-      <section id="membership" className="section section--muted">
+      <section id="pricing" className="section">
         <Container>
           <SectionHeading
-            eyebrow="Membership"
-            title="Плани доступу"
-            description="CTA під членство винесені в окремий блок, щоб сильніше підштовхувати до цільової дії."
+            title="Прості пакети без зайвих рівнів і плутанини"
+            description="Стартуй з того, що відповідає твоїй цілі зараз. Потім масштабуватися завжди легше, ніж починати з хаосу."
             align="center"
           />
-          <CardGrid items={membershipPlans} variant="pricing" />
+          <CardGrid items={pricingPlans} variant="pricing" />
+        </Container>
+      </section>
+
+      <section id="faq" className="section section--muted">
+        <Container>
+          <SectionHeading
+            title="Питання, які користувач ставить перед покупкою"
+            description="Цей блок закриває основні заперечення і допомагає людині швидше дійти до дії замість того, щоб відкладати рішення."
+          />
+          <CardGrid items={faqItems} variant="feature" />
         </Container>
       </section>
     </>

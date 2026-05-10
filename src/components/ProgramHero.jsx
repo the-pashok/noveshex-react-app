@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import { Container } from './Container';
 import { programLinks } from '../data/programsData';
+import { telegramUrl } from '../data/siteData';
 
 export function ProgramHero({ program }) {
   return (
@@ -11,8 +12,12 @@ export function ProgramHero({ program }) {
           <h1>{program.title}</h1>
           <p>{program.description}</p>
           <div className="program-hero__actions">
-            <a href="#membership" className="button button--primary">Get membership</a>
-            <Link to="/programs" className="button button--secondary">Усі програми</Link>
+            <a href={telegramUrl} target="_blank" rel="noreferrer" className="button button--primary">
+              Купити за {program.price}
+            </a>
+            <Link to="/programs" className="button button--secondary">
+              Усі програми
+            </Link>
           </div>
         </div>
 

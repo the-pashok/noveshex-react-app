@@ -37,7 +37,7 @@ export function MainLayout() {
 
   useEffect(() => {
     setIsMenuOpen(false);
-    window.scrollTo({ top: 0, behavior: 'instant' });
+    window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
   }, [location.pathname]);
 
   return (
@@ -84,15 +84,23 @@ export function MainLayout() {
           <div>
             <span className="site-footer__brand">Noveshex</span>
             <p className="site-footer__copy">
-              Dark-first redesign concept in React with reusable components, training-program pages and production-ready structure.
+              Цифрові тренувальні програми, харчування, онлайн ведення та зрозумілий шлях від запиту до реального результату.
             </p>
           </div>
 
           <div>
             <h3>Навігація</h3>
             <div className="site-footer__links">
-              {footerLinks.map((link) =>
-                isHashLink(link.to) ? (
+              {footerLinks.map((link) => {
+                if (link.external) {
+                  return (
+                    <a key={link.to} href={link.to} target="_blank" rel="noreferrer">
+                      {link.label}
+                    </a>
+                  );
+                }
+
+                return isHashLink(link.to) ? (
                   <a key={link.to} href={link.to}>
                     {link.label}
                   </a>
@@ -100,8 +108,8 @@ export function MainLayout() {
                   <Link key={link.to} to={link.to}>
                     {link.label}
                   </Link>
-                )
-              )}
+                );
+              })}
             </div>
           </div>
 

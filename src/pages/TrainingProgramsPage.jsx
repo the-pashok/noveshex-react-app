@@ -11,8 +11,8 @@ export function TrainingProgramsPage() {
       <Container>
         <SectionHeading
           eyebrow="Training"
-          title="Програми тренувань"
-          description="Три окремі програми в одному стилі: 3-Day Split, 4-Day Split та Full Body. У кожній сторінці — дні тренувань, вправи та mock video-прев’ю."
+          title="Програми тренувань Noveshex"
+          description="Три окремі продукти в одному стилі: Full Body для впевненого старту, 3-Day Split для стабільного росту та 4-Day Split для більшої деталізації й обсягу."
         />
         <ProgramCardGrid items={items} />
       </Container>

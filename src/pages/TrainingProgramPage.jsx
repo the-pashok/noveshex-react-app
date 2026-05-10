@@ -5,7 +5,7 @@ import { ProgramDaySection } from '../components/ProgramDaySection';
 import { ProgramHero } from '../components/ProgramHero';
 import { SectionHeading } from '../components/SectionHeading';
 import { trainingPrograms } from '../data/programsData';
-import { membershipPlans } from '../data/siteData';
+import { pricingPlans } from '../data/siteData';
 import { CardGrid } from '../components/CardGrid';
 import { NotFoundPage } from './NotFoundPage';
 
@@ -25,8 +25,8 @@ export function TrainingProgramPage() {
         <Container>
           <SectionHeading
             eyebrow="Workout Plan"
-            title="Структура програми"
-            description="Кожен день оформлено як окремий блок у стилі premium dark UI. Картки вправ повторюють логіку твого прикладу: прев’ю, назва та ключові параметри."
+            title="Що всередині програми"
+            description="Кожен день оформлений як окремий блок: логіка вправ, mock video-прев’ю та ключові параметри виконання. Це виглядає чисто, читається швидко і продає сам продукт прямо на сторінці."
           />
           <div className="program-days">
             {program.days.map((day, index) => (
@@ -36,15 +36,15 @@ export function TrainingProgramPage() {
         </Container>
       </section>
 
-      <section id="membership" className="section section--muted">
+      <section id="pricing" className="section section--muted">
         <Container>
           <SectionHeading
-            eyebrow="Membership"
-            title="Хочеш доступ до програми?"
-            description="Після вибору плану можна підключити оплату або логіку членства у Wix / React інтеграції."
+            eyebrow="Доступ"
+            title="Хочеш забрати програму зараз?"
+            description="Можна стартувати з окремої програми або одразу перейти в формат із супроводом, якщо потрібен контроль по ходу."
             align="center"
           />
-          <CardGrid items={membershipPlans} variant="pricing" />
+          <CardGrid items={pricingPlans} variant="pricing" />
         </Container>
       </section>
     </>

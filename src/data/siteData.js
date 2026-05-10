@@ -2,7 +2,6 @@ export const telegramUrl = 'https://t.me/anton_khomyk';
 export const telegramHandle = '@anton_khomyk';
 
 export const mainNavLinks = [
-  { label: 'Програми', href: '/programs' },
   { label: 'Онлайн ведення', href: '/#coaching' },
   { label: 'Ціни', href: '/#pricing' },
   { label: 'FAQ', href: '/#faq' },

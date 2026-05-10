@@ -14,9 +14,6 @@ export function Hero() {
             для тих, хто хоче не просто “почати”, а реально дійти до форми, дисципліни та стабільного прогресу.
           </p>
           <div className="hero__actions">
-            <Link to="/programs" className="button button--primary">
-              Переглянути програми
-            </Link>
             <a href={telegramUrl} target="_blank" rel="noreferrer" className="button button--secondary">
               Написати в Telegram
             </a>

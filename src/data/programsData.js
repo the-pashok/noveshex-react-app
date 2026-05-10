@@ -1,9 +1,3 @@
-export const programLinks = [
-  { label: '3-Day Split', to: '/programs/3-day-split' },
-  { label: '4-Day Split', to: '/programs/4-day-split' },
-  { label: 'Full Body', to: '/programs/full-body' },
-];
-
 export const trainingPrograms = {
   '3-day-split': {
     slug: '3-day-split',

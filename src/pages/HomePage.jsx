@@ -1,7 +1,6 @@
 import { CardGrid } from '../components/CardGrid';
 import { Container } from '../components/Container';
 import { Hero } from '../components/Hero';
-import { ProgramCardGrid } from '../components/ProgramCardGrid';
 import { SectionHeading } from '../components/SectionHeading';
 import {
   coachingSteps,
@@ -12,7 +11,6 @@ import {
   telegramUrl,
   valueCards,
 } from '../data/siteData';
-import { trainingPrograms } from '../data/programsData';
 
 export function HomePage() {
   return (
@@ -36,16 +34,6 @@ export function HomePage() {
             description="Мінімум шуму, максимум зрозумілих рішень. Саме тому тут спочатку сенс і структура, а вже потім декоративність."
           />
           <CardGrid items={valueCards} variant="feature" />
-        </Container>
-      </section>
-
-      <section id="programs" className="section">
-        <Container>
-          <SectionHeading
-            title="Три формати тренувань під різний ритм життя"
-            description="Обирай той варіант, який ти зможеш виконувати стабільно. Саме стабільність, а не ідеальний понеділок, дає результат."
-          />
-          <ProgramCardGrid items={Object.values(trainingPrograms)} />
         </Container>
       </section>
 
